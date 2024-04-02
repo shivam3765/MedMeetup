@@ -1,0 +1,90 @@
+{
+    "department" :[
+        {
+    "department_image": "./static/images/neurologist.jpg",
+    "department_name": "Neurologist",
+    "department_description": "A neurologist is a medical doctor specializing in the diagnosis and treatment of disorders affecting the nervous system, including the brain, spinal cord, and nerves. They employ various diagnostic tests and treatments to manage conditions such as epilepsy, stroke, Alzheimer's disease, and multiple sclerosis."
+        },
+        {
+    "department_image": "./static/images/physicians.jpg",
+    "department_name": "Physicians",
+    "department_description": "Physicians are medical professionals who diagnose and treat illnesses, injuries, and diseases. They assess patients' medical histories, perform physical examinations, order and interpret diagnostic tests, and prescribe medications or other treatments to promote health and well-being."
+        },
+        {
+    "department_image": "./static/images/cardiologists.jpg",
+    "department_name": "Cardiologists",
+    "department_description": "Cardiologists are specialized physicians who focus on the diagnosis and treatment of heart-related conditions and diseases. They assess patients' cardiac health through various tests such as electrocardiograms (ECGs), echocardiograms, and stress tests, and provide interventions like medications, lifestyle modifications, and surgical procedures to manage conditions like heart disease, arrhythmias, and heart failure."
+        },
+        {
+    "department_image": "./static/images/radiologist.jpg",
+    "department_name": "Radiologist",
+    "department_description": "Radiologists are medical doctors who specialize in interpreting medical images such as X-rays, CT scans, MRI scans, and ultrasounds to diagnose and treat diseases and injuries. They work closely with other physicians to provide accurate diagnoses and treatment plans based on imaging findings, playing a crucial role in patient care across various medical specialties."
+        },
+        {
+    "department_image": "./static/images/orthopedist.jpg",
+    "department_name": "Orthopedist",
+    "department_description": "Orthopedists are medical doctors specializing in the diagnosis and treatment of musculoskeletal conditions, including bones, joints, ligaments, tendons, and muscles. They provide care for injuries such as fractures, as well as chronic conditions like arthritis. Orthopedists employ a range of treatments including medication, physical therapy, and surgery to help patients regain mobility and alleviate pain."
+        }
+    ],
+
+    "doctors" : [
+        {
+            "doctor_image": "./static/images/ViditMathur.jpg",
+            "doctor_name": "Dr. Vidit Mathur",
+            "doctor_description": "Radiology"
+        },
+        {
+            "doctor_image": "./static/images/dr.vipinola.jpg",
+            "doctor_name": "Dr. Vipin Ola",
+            "doctor_description": "Neurology"
+        },
+        {
+            "doctor_image": "./static/images/dr.sandeepgarg.jpg",
+            "doctor_name": "Dr. Sandeep Garg",
+            "doctor_description": "Orthopedics"
+        },
+        {
+            "doctor_image": "./static/images/Dr.neetu.jpg",
+            "doctor_name": "Dr. Neetu Sidana",
+            "doctor_description": "Dermatology"
+        },
+        {
+            "doctor_image": "./static/images/dr.prithivgiri.jpg",
+            "doctor_name": "Dr. Prithvi Giri",
+            "doctor_description": "Neuroscience"
+        }
+    ],
+
+    "user_review" : [
+        {
+            "user_image": "./static/images/suresh.png",
+            "user_name": "Suresh Tiwari",
+            "review": " From the moment I walked in, the staff were incredibly attentive and caring. The nurses were always there when I needed assistance, and the doctors took the time to explain everything thoroughly. The facility was clean and well-maintained, which added to the overall comfort of my stay.",
+            "rating": "4"
+        },
+        {
+            "user_image": "./static/images/simiran.png",
+            "user_name": "Simiran Lalvani",
+            "review": "Not only did they provide top-notch medical treatment, but they also focused on holistic care, taking into account my emotional well-being throughout my stay. The support staff were compassionate and understanding, making me feel safe and supported during a difficult time.",
+            "rating": "3"
+        },
+        {
+            "user_image": "./static/images/rohan.png",
+            "user_name": "Rohan Joshi",
+            "review": "The staff went above and beyond to accommodate her needs and ensure her comfort at all times. From the attentive nursing care to the delicious and nutritious meals, every aspect of her stay was carefully thought out. ",
+            "rating": "5"
+        },
+        {
+            "user_image": "./static/images/vinod.png",
+            "user_name": "Vinod Mehra",
+            "review": "They provided ample opportunities for hands-on learning and encouraged me to take an active role in patient care. The collaborative environment fostered growth and development, preparing me for a successful career in medicine.",
+            "rating": "4"
+        },
+        {
+            "user_image": "./static/images/shivam.png",
+            "user_name": "Shivam Chaudhary",
+            "review": "The medical team devised a comprehensive treatment plan tailored to my specific needs, and their expertise and dedication were evident every step of the way. The rehabilitation services offered were instrumental in restoring my strength and mobility, allowing me to regain independence.",
+            "rating": "5"
+        }
+    ]
+}

@@ -1,0 +1,90 @@
+{% extends "layout.html" %}
+{% load static %}
+{% block title %} Appointment {% endblock title %}
+
+{% block body %}
+<!-- ============================= Body Start ========================= -->
+<section class="section">
+
+<div class="container">
+
+    <!-- ============================= Form Start ========================= -->
+    <form method="post" class="form">
+        {% csrf_token %}
+        <h1>Appointment</h1>
+
+        <!-- ---------------- alert message ----------------- -->
+        {% if messages %}
+      <div class="messages" style="width: 100%;">
+          {% for message in messages %}
+          {% if message.tags %}
+              {% if 'info' in message.tags %}
+                  <div class="info" style="background-color: #ffa43cc8; padding: 1rem;">
+              {% elif 'success' in message.tags %}
+                  <div class="success" style="background-color: #008000cc; padding: 1rem;">
+              {% else %}
+                  <div class="other" style="background-color: #ccc; padding: 1rem;">
+              {% endif %}
+                  <p style="text-align: center; color: #fff;">{{ message }}</p>
+              </div>
+          {% endif %}
+          {% endfor %}
+      </div>
+    {% endif %}
+
+            <!-- ----------------- Form items ----------------- -->
+            <div class="form_items">
+                <label>Patient Name</label>
+                <input type="text" name="patient_name" placeholder="Enter patient name" required>
+            </div>
+
+            <div class="form_items">
+                <label>Patient Age</label>
+                <input type="text" name="patient_age" placeholder="Enter age">
+            </div>
+
+            <div class="form_items">
+                <label>Email</label>
+                <input type="email" name="patient_email" placeholder="Enter email" required>
+            </div>
+
+            <div class="form_items">
+                <label>Mobile Number</label>
+                <input type="text" name="patient_mobile" placeholder="Enter mobile number" required>
+            </div>
+
+            <div class="form_items">
+                <label>Date</label>
+                <input type="date" name="date" required>
+            </div>
+
+            <div class="form_items">
+                <label>Doctor</label>
+                <select name="doctor" required>
+                    <option>--Select-Doctors--</option>
+                    {% for doctor in doctors %}
+                    <option value="{{doctor.doctor_name}}">{{doctor.doctor_name}}</option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <div class="form_items">
+                <label>Department</label>
+                <select name="department">
+                    <option>--Select-Department--</option>
+                    {% for department in departments %}
+                    <option value="{{department.department_name}}">{{department.department_name}}</option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <div class="form_items">
+                <input type="submit" value="Submit">
+            </div>
+
+    </form>
+</div>
+</section>
+
+<!-- ============================= Body End ========================= -->
+{% endblock body %}

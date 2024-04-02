@@ -1,0 +1,73 @@
+.profile_container {
+    display: flex;
+    gap: 3rem;
+    margin-top: 2rem;
+    margin-left: 5rem;
+    margin-bottom: 5rem;
+    color: #496989;
+}
+
+.profile_image form{
+    display: flex;
+    flex-direction: column;
+}
+
+.profile_image form input[type = "file"]{
+    border: none;
+    outline: none;
+    margin-top: 1rem;
+}
+
+.profile_image img {
+    width: 20rem;
+    height: 20rem;
+    border-radius: 10rem;
+}
+
+.profile_details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.profile_details button {
+    width: 12rem;
+    padding: .4rem;
+    border-radius: 2rem;
+    border: none;
+    outline: none;
+    background-color: #14a44e;
+    color: #fff;
+}
+
+/* ========================== Table CSS ======================== */
+.table_container {
+    display: none;
+    padding: 5rem;
+    font-size: 1.5rem;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    color: #496989;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tbody tr:hover {
+    background-color: #ddd;
+}

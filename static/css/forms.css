@@ -1,0 +1,113 @@
+.section{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-image: url(../images/form-bg.jpg);
+  }
+  
+  .container{
+    width: 35%;
+    padding: 15px;
+    margin-top: 2rem;
+    font-size: 17px;
+    height: max-content;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    color: #FFD0EC;
+  }
+  
+  h1{
+    font-size: 40px;
+  }
+  
+  .form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    font-size: 20px;
+    background-color: #81689D;
+    padding: 0 2rem;
+    padding: 2rem;
+  }
+
+  .form_items {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: .5rem;
+    font-size: 2.5rem
+  }
+
+  .form_items:last-child {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .form_items select {
+    width: 100%;
+    padding: 7px;
+    border-radius: 5px;
+    border: none;
+    font-size: 1.6rem;
+    outline: none;
+    color: #496989;
+  }
+
+  .form_items textarea{
+    resize: none;
+    outline : none;
+    color: #496989;
+    font-size: 2rem;
+  }
+
+  input[type = "text"],
+  input[type = "password"],
+  input[type= "email"],
+  input[type= "date"] {
+    width: 100%;
+    padding: 7px;
+    border-radius: 5px;
+    border: none;
+    font-size: 1.8rem;
+    outline: none;
+    color: #496989;
+  } 
+  
+  input[type = "submit"]{
+    width: 20rem;
+    padding: 6px;
+    border-radius: 2px;
+    margin-top: 17px;
+    border: none;
+    font-size: 2rem;
+    background-color: rgb(13, 87, 161);
+    color: #FFD0EC;
+  }
+  
+  input[type="submit"]:hover {
+    background-color: #0056b3;
+  }
+  
+  .link,
+  .link:link,
+  .link:visited,
+  .link:active {
+    color: #FFA33C;
+    text-decoration: none;
+  }
+
+
+  /* ===================================== Message CSS ================================== */
+  .messages .info{
+    background-color: #3b72cacc;
+  }
+
+  .messages .success{
+    background-color: #14a44ecd;
+  }

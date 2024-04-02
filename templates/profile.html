@@ -1,0 +1,59 @@
+
+{% extends "layout.html" %}
+{% load static %}
+{% block title %} profile {% endblock title %}
+{% block body %}
+
+<section>
+    <div class="profile_container">
+        <div class="profile_image">
+            <img src="{% static 'files/profile.jpg'%}">
+            <form>
+                <input type="file" name="profile">
+                <input type="submit">
+            </form>
+        </div>
+        <div class="profile_details">
+            <h1>{{user.first_name}} {{user.last_name}}</h1>
+            <h3>Email : {{user.email}}</h3>
+            <h3>UserName : {{user.username}}</h3>
+            <button id="toggleButton">Appoint</button>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="table_container">
+        <table>
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Patient name</th>
+                    <th>Patient age</th>
+                    <th>Patient email</th>
+                    <th>Patient mobile</th>
+                    <th>Department name</th>
+                    <th>Doctor name</th>
+                    <th>Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for appoint in queryset %}
+                <tr>
+                    <th>{{forloop.counter }}</th>
+                    <td>{{appoint.patient.patient_name}}</td>
+                    <td>{{appoint.patient.patient_age}}</td>
+                    <td>{{appoint.patient.patient_email}}</td>
+                    <td>{{appoint.patient.patient_mobile}}</td>
+                    <td>{{appoint.department_name}}</td>
+                    <td>{{appoint.doctor_name}}</td>
+                    <td>{{appoint.date}}</td>
+                </tr>
+
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</section>
+
+{% endblock body %}

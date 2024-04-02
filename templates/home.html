@@ -1,0 +1,88 @@
+{% extends "layout.html" %}
+{% load static %}
+{% block title %} MedMeetup {% endblock title %}
+
+{% block body %}
+<!-- ============================= Body Start ========================= -->
+<section class="home_section">
+    <div class="main_container">
+
+        <div class="left_container">
+            <h4>International Hospital</h4>
+            <h1>Empowering Health Everywhere, Everytime!</h1>
+            <p>At MedMeetup, We prioritize timely healthcare access through convenient appointment scheduling accross all departments. 
+                As a premier hospital-based platform, we bridge the gap between patients and doctors. 
+                Our mission is to ensure efficient healthcare services for all.
+            </p>
+            <a href="/appointment/appoint/" type="button" class="hero_button">Appointment</a>
+        </div>
+        <div class="right_container">
+            <img class="hero_img">
+        </div>
+    </div>
+</section>
+
+<section class="department_section">
+    <div class="department_header">
+        <p>Best Practice care!</p>
+        <h1>Responsible Departments</h1>
+    </div>
+    <div class="department_silider">
+        {% for department in department|slice:"0:5" %}
+        <div class="department_card">
+            <img src="/media/{{department.department_image}}" class="department_image">
+            <div class="department_details">
+                <h3 class="department_name">{{ department.department_name }}</h3>
+                <p class="department_description">{{ department.department_description|slice:"0:100"}} .....</p>
+                <button class="department_button">More</button>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+
+<section class="doctors_section">
+    <div class="doctors_header">
+        <p>Best Doctors!</p>
+        <h1>Profectional Doctors</h1>
+    </div>
+    <div class="doctors_silider">
+        {% for doctor in doctors|slice:"0:5" %}
+
+        <div class="doctors_card">
+            <img src="/media/{{doctor.doctor_image}}" class="doctors_image">
+            <div class="doctors_details">
+                <h3 class="doctors_name">{{ doctor.doctor_name }}</h3>
+                <p class="doctors_description">{{ doctor.doctor_occupation }}</p>
+                <button class="doctors_button">More</button>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+
+<section class="testimonial_section">
+    <div class="wrapper">
+        <div class="header">
+            <p>Testimonial</p>
+            <h1>Satisfied Patients Reviews</h1>
+        </div>
+        <div class="carousel">
+            {% for review in data.user_review|slice:"0:5" %}
+            <div class="card">
+                <div class="image"> 
+                    <img src="{{review.user_image}}" class="user_image">
+                </div>
+                <div class="testimonial_details" >
+                    <p class="testimonial_review">{{ review.review|slice:"0:100"}} ....</p>
+                    <p class="testimonial_rating">Rating : {{ review.rating }}</p>
+                    <h3 class="testimonial_name">{{ review.user_name }}</h3>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- ============================= Body End ========================= -->
+{% endblock body %}

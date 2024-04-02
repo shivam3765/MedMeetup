@@ -1,0 +1,55 @@
+{% extends "layout.html" %}
+{% block title %} contact {% endblock title%}
+{% block body %}
+<!-- ================================ Body ================================== -->
+<section class="section">
+    <div class="container">
+        <h1>Contact Us</h1>
+
+        <!-- --------------- alert message ----------------- -->
+        {% if messages %}
+      <div class="messages" style="width: 100%;">
+          {% for message in messages %}
+          {% if message.tags %}
+              {% if 'info' in message.tags %}
+                  <div class="info" style="background-color: #3b72cacc; padding: 1rem;">
+              {% elif 'success' in message.tags %}
+                  <div class="success" style="background-color: #008000cc; padding: 1rem;">
+              {% else %}
+                  <div class="other" style="background-color: #ccc; padding: 1rem;">
+              {% endif %}
+                  <p style="text-align: center; color: #fff;">{{ message }}</p>
+              </div>
+          {% endif %}
+          {% endfor %}
+      </div>
+        {% endif %}
+
+        <!-- =============================== Form ================================= -->
+        <form method="post" class="form">
+            {% csrf_token %}
+
+            <div class="form_items">
+                <label>Full Name</label>
+                <input type="text" name="name" placeholder="Enter your name" required>
+            </div>
+
+            <div class="form_items">
+                <label>Email</label>
+                <input type="email" name="email" placeholder="Enter your email" required>
+            </div>
+
+            <div class="form_items">
+                <label>Message</label>
+                <textarea name="message" cols="50" rows="6" required></textarea>
+            </div>
+
+            <div class="form_items">
+                <input type="submit" value="Submit">
+            </div>
+        </form>
+        <!-- ========================== Form End ===============================  -->
+    </div>
+</section>
+<!-- ================================ Body End ================================== -->
+{% endblock body %}
