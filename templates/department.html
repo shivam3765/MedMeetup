@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+{% block title %} department {% endblock title %}
+{% block body %}
+<section class="doctor">
+    <div class="doctor_container">
+        <div>
+            <img class="doctor_image" src="/media/{{queryset.department_image}}">
+        </div>
+        <div class="doctors_details">
+            <h1>{{queryset.department_name}}</h1>
+            <h3 style="margin-left: 1rem;">{{queryset.department_description}}</h3>
+        </div>
+    </div>
+</section>
+{% endblock body %}

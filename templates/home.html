@@ -34,7 +34,7 @@
             <div class="department_details">
                 <h3 class="department_name">{{ department.department_name }}</h3>
                 <p class="department_description">{{ department.department_description|slice:"0:100"}} .....</p>
-                <button class="department_button">More</button>
+                <a href="/doctors/department/{{department.id}}" class="department_button">More</a>
             </div>
         </div>
         {% endfor %}
@@ -54,7 +54,7 @@
             <div class="doctors_details">
                 <h3 class="doctors_name">{{ doctor.doctor_name }}</h3>
                 <p class="doctors_description">{{ doctor.doctor_occupation }}</p>
-                <button class="doctors_button">More</button>
+                <a href="/doctors/doctor/{{doctor.id}}" class="doctors_button">More</a>
             </div>
         </div>
         {% endfor %}

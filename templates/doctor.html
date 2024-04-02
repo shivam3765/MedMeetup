@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+{% block title %} doctor {% endblock title %}
+{% block body %}
+
+<section class="doctor">
+    <div class="doctor_container">
+        <div>
+            <img class="doctor_image" src="/media/{{queryset.doctor_image}}">
+        </div>
+        <div class="doctors_details">
+            <h1>{{queryset.doctor_name}}</h1>
+            <h3 style="margin-left: 1rem;">{{queryset.doctor_occupation}}</h3>
+
+            <a href="/appointment/appoint/" class="hero_button" style="margin-top: 2rem;">BOOK AN APPOINTMENT</a>
+        </div>
+    </div>
+</section>
+
+{% endblock body %}
