@@ -14,7 +14,7 @@ def signup(request):
         user = User.objects.filter(username = username)
 
         if user.exists():
-            messages.info(request, "Username already exits.")
+            messages.info(request, "Username already exists.")
             return redirect("/auth/signup")
         
         user = User.objects.create(

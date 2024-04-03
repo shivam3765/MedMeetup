@@ -75,7 +75,11 @@
                 </div>
                 <div class="testimonial_details" >
                     <p class="testimonial_review">{{ review.review|slice:"0:100"}} ....</p>
-                    <p class="testimonial_rating">Rating : {{ review.rating }}</p>
+                    <p class="testimonial_rating">
+                        {% for rating in review.rating %}
+                          {{rating}} <i class="fa-solid fa-star"></i>
+                        {% endfor %}
+                    </p>
                     <h3 class="testimonial_name">{{ review.user_name }}</h3>
                 </div>
             </div>

@@ -26,8 +26,8 @@ def contact(request):
         subject = f"{name} quert from your hospital website"
         send_mail(subject=subject,
                 message=message,
-                recipient_list=[email],
-                from_email=settings.EMAIL_HOST_USER,
+                recipient_list=[settings.EMAIL_HOST_USER],
+                from_email= email,
                 fail_silently=False
                 )
         

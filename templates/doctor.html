@@ -7,9 +7,22 @@
         <div>
             <img class="doctor_image" src="/media/{{queryset.doctor_image}}">
         </div>
-        <div class="doctors_details">
-            <h1>{{queryset.doctor_name}}</h1>
-            <h3 style="margin-left: 1rem;">{{queryset.doctor_occupation}}</h3>
+        <div class="doctor_data">
+            <div class="doctors_details_items">
+                <h1>{{queryset.doctor_name}}</h1>
+            </div>
+            <div class="doctors_details_items">
+                <i class="fa-solid fa-user-doctor"></i>
+                <h3>{{queryset.doctor_occupation}}</h3>
+            </div>
+            <div class="doctors_details_items">
+                <i class="fa-solid fa-envelope"></i>
+                <h3>{{queryset.doctor_email}}</h3>
+            </div>
+            <div class="doctors_details_items">
+                <i class="fa-solid fa-phone"></i>
+                <h3>{{queryset.doctor_phone}}</h3>
+            </div>
 
             <a href="/appointment/appoint/" class="hero_button" style="margin-top: 2rem;">BOOK AN APPOINTMENT</a>
         </div>

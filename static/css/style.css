@@ -213,12 +213,10 @@ a:active {
 	cursor: pointer;
 	background-color:  #33383b;
 	border-radius: 2px;
-
 	font-size: 20px;
 	color: #FFD0EC;
 	text-align: center;
 	line-height: 35px;
-
 	margin-right: 3px;
 	margin-bottom: 5px;
 }

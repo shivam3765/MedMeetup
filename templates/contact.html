@@ -12,11 +12,11 @@
           {% for message in messages %}
           {% if message.tags %}
               {% if 'info' in message.tags %}
-                  <div class="info" style="background-color: #3b72cacc; padding: 1rem;">
+                  <div class="info" style="background-color: #ffa43cc4; padding: .5rem;">
               {% elif 'success' in message.tags %}
-                  <div class="success" style="background-color: #008000cc; padding: 1rem;">
+                  <div class="success" style="background-color: #008000cc; padding: .5rem;">
               {% else %}
-                  <div class="other" style="background-color: #ccc; padding: 1rem;">
+                  <div class="other" style="background-color: #ccc; padding: .5rem;">
               {% endif %}
                   <p style="text-align: center; color: #fff;">{{ message }}</p>
               </div>

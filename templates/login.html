@@ -15,46 +15,46 @@
           {% for message in messages %}
           {% if message.tags %}
               {% if 'info' in message.tags %}
-                  <div class="info" style="background-color: #ffa43cc8; padding: 1rem;">
+                  <div class="info" style="background-color: #ffa43cc4; padding: .5rem;">
               {% elif 'success' in message.tags %}
-                  <div class="success" style="background-color: #008000cc; padding: 1rem;">
+                  <div class="success" style="background-color: #008000cc; padding: .5rem;">
               {% else %}
-                  <div class="other" style="background-color: #ccc; padding: 1rem;">
+                  <div class="other" style="background-color: #ccc; padding: .5rem;">
               {% endif %}
                   <p style="text-align: center; color: #fff;">{{ message }}</p>
               </div>
           {% endif %}
           {% endfor %}
       </div>
-    {% endif %}
+        {% endif %}
   
-  <!-- ============================= Form ========================= -->
-  <form method="post" class="form">
-    {% csrf_token %}
-    
-    <div class="form_items">
-      <label>Username</label>
-      <input type="text" name="username" placeholder="username" />
-    </div>
-    
-    <div class="form_items">
-      <label>Password</label>
-      <input type="password" name="password" placeholder="password" />
-    </div>
-    
-    <div class="form_items">
-      <input type="submit" value="Sign-in">
+    <!-- ============================= Form ========================= -->
+    <form method="post" class="form">
+      {% csrf_token %}
+      
+      <div class="form_items">
+        <label>Username</label>
+        <input type="text" name="username" placeholder="username" />
+      </div>
+      
+      <div class="form_items">
+        <label>Password</label>
+        <input type="password" name="password" placeholder="password" />
+      </div>
+      
+      <div class="form_items">
+        <input type="submit" value="Sign-in">
+      </div>
+
+    </form>
+    <!-- ============================= Form End ========================= -->
+
+    <div>
+      <p>Not have an account? <a class="link" href="signup"> SignUp </a></p>
     </div>
 
-  </form>
-  <!-- ============================= Form End ========================= -->
-
-  <div>
-    <p>Not have an account? <a class="link" href="signup"> SignUp </a></p>
   </div>
-
-</div>
-<!-- ============================= Body End ========================= -->
+  <!-- ============================= Body End ========================= -->
 
 </section>
 <!-- ============================= Login Section End ========================= -->

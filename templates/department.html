@@ -6,9 +6,14 @@
         <div>
             <img class="doctor_image" src="/media/{{queryset.department_image}}">
         </div>
-        <div class="doctors_details">
-            <h1>{{queryset.department_name}}</h1>
-            <h3 style="margin-left: 1rem;">{{queryset.department_description}}</h3>
+        <div class="doctor_data">
+            <div doctors_details_items>
+                <h1>{{queryset.department_name}}</h1>
+            </div>
+            <div doctors_details_items>
+                <i class="fa-solid fa-circle-info"></i>
+                <h3>{{queryset.department_description}}</h3>
+            </div>
         </div>
     </div>
 </section>

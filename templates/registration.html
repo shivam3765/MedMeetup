@@ -12,16 +12,22 @@
         
         <!-- --------------- alart message --------------- -->
         {% if messages %}
-        <div class="messages">
-            {% for message in messages %}
-            {% if message.tags %}
-            <div class="{{ message.tags }}">
-              <p>{{ message }}</p>
-            </div>
-            {% endif %}
-            {% endfor %}
-        </div>
-      {% endif %}
+      <div class="messages" style="width: 100%;">
+          {% for message in messages %}
+          {% if message.tags %}
+              {% if 'info' in message.tags %}
+                  <div class="info" style="background-color: #ffa43cc4; padding: .5rem;">
+              {% elif 'success' in message.tags %}
+                  <div class="success" style="background-color: #008000cc; padding: .5rem;">
+              {% else %}
+                  <div class="other" style="background-color: #ccc; padding: .5rem;">
+              {% endif %}
+                  <p style="text-align: center; color: #fff;">{{ message }}</p>
+              </div>
+          {% endif %}
+          {% endfor %}
+      </div>
+        {% endif %}
 
         <!-- ============================= Form Start ========================= -->
         <form method="post" class="form">
