@@ -19,9 +19,12 @@
 
 .about_content h1{
     color: #FFD0EC;
+    margin-top: 1rem;
+    text-align: center;
+    font-size: 2rem;
 }
 
-.about_content h1 p{
+.about_content p{
     margin-top: 1rem;
     text-align: center;
     font-size: 2rem;
@@ -61,4 +64,5 @@
 .about_mission div p{
     text-align: start;
     margin-top: 1rem;
+    font-size: 2rem;
 }

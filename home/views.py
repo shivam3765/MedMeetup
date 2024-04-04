@@ -6,6 +6,8 @@ from django.core.mail import send_mail
 from django.contrib import messages
 from django import forms
 from .models import UserProfile
+from django.contrib.auth.models import User
+from django.contrib.auth import authenticate
 from appointment.models import *
 
 with open("./static/files/data.json") as file:
@@ -70,3 +72,27 @@ def upload_profile_image(request):
     else:
         form = ProfileImageForm()
     return render(request, 'profile.html', {'form': form})
+
+
+# ========================= This function for reset password =====================
+def reset_password(request):
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        user = User.objects.filter(username=username).first()
+        if user is not None:
+            password = request.POST.get('password')
+            confirm_password = request.POST.get('confirm_password')
+
+            if password == confirm_password:
+                user.set_password(password)
+                user.save()
+                messages.success(request, "Password Successfully Reset.")
+                return redirect('/reset_password/')
+            else:
+                messages.info(request, "Passwords do not match.")
+                return redirect('/reset_password/')
+            
+        messages.info(request, "Invalid username.")
+        return redirect('/reset_password/')
+    
+    return render(request, "passwordReset.html")

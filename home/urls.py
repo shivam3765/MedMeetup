@@ -7,4 +7,5 @@ urlpatterns = [
     path("contact/", views.contact, name="contact"),
     path("profile/", views.show_appointment, name="profile"),
     path('upload_profile_image/', views.upload_profile_image, name='upload_profile_image'),
+    path('reset_password/', views.reset_password, name='reset_password'),
 ]
