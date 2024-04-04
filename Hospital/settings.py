@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 ]
 
+# External Application Definition
 EXTERNAL_APPS = [
     'home',
     'userAuth',

@@ -4,8 +4,8 @@ from django.contrib.auth.decorators import login_required
 from doctor.models import *
 from appointment.models import *
 
-# Create your views here.
 
+# ========================= This function for book appointment =======================
 @login_required(login_url='/auth/signin')
 def appointment(request):
     doctors = Doctors.objects.all()

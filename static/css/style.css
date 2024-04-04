@@ -183,6 +183,7 @@ a:active {
 /* Footer Right */
 
 .footer-distributed .footer-right{
+	text-align: center;
 	width: 20%;
 }
 

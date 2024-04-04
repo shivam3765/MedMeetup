@@ -1,5 +1,7 @@
 from django.db import models
 
+
+# ========================= Doctor Table =========================
 class Doctors(models.Model):
     doctor_name = models.CharField(max_length=30)
     doctor_occupation = models.CharField(max_length=50)
@@ -12,6 +14,7 @@ class Doctors(models.Model):
         return self.doctor_name
 
 
+# ========================= Department Table =========================
 class Department(models.Model):
     department_name = models.CharField(max_length=20)
     department_description = models.CharField(max_length=500)

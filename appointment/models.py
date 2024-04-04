@@ -1,6 +1,8 @@
 from django.db import models
 from doctor.models import *
 
+
+# ========================= Patient Table =========================
 class Patient(models.Model):
     patient_name = models.CharField(max_length=20)
     patient_age = models.IntegerField(default=15)
@@ -11,6 +13,7 @@ class Patient(models.Model):
         return self.patient_name
 
 
+# ========================= Appointment Table =========================
 class Appointment(models.Model):
     patient = models.ForeignKey(Patient, related_name="patient", on_delete=models.CASCADE)
     department_name = models.CharField(max_length=30)

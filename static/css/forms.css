@@ -6,9 +6,8 @@
   }
   
   .container{
-    width: 35%;
-    padding: 15px;
-    margin-top: 2rem;
+    /* width: 35%; */
+    padding: 2rem;
     font-size: 17px;
     height: max-content;
     display: flex;

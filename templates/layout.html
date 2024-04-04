@@ -9,12 +9,12 @@
             {% endblock title%}
         </title>
 
-        <!-- ========================= Font Awesome ============================= -->
+        <!-- ========================= Font Awesome CDN ============================= -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <script src="https://kit.fontawesome.com/1c4c43b455.js" crossorigin="anonymous"></script>
 
         <!-- ========================= Logo ================================  -->
-        <link rel="icon" href="../static/images/logo-bg.png" type="image/x-icon">
+        <link rel="icon" href="{% static 'images/logo-bg.png' %}" type="image/x-icon">
 
         <!-- ============================= Link CSS File ========================= -->
         <link rel="stylesheet" href="{% static 'css/style.css' %}">
@@ -25,18 +25,13 @@
         <link rel="stylesheet" href="{% static 'css/about.css' %}">
 
 
-        <!-- ============================= Link JS File ========================= -->
-        <script src="{% static 'js/carousel.js' %}"></script>
-        <script src="{% static 'js/home.js' %}"></script>
-
-
     </head>
     <body>
         <!-- ============================= Nav Body Start ========================= -->
         <nav class="nav_bar">
             <div class="nav_items_class">
                 <ul class="nav_logo">
-                    <li><img class="logo_img" src="../static/images/logo.png" alt=""></li>
+                    <li><img class="logo_img" src="{% static 'images/logo.png' %}" alt=""></li>
                     <li><a href="/">MedMeetup</a></li>
                 </ul>
             </div>
@@ -78,16 +73,16 @@
         <!-- ============================= Nav Body End ========================= -->
 
         {% block body %}
+
     
         {% endblock body %}
 
         <!-- ============================ Footer ================================= -->
-
         <footer class="footer-distributed">
 
 			<div class="footer-left">
                 <div class="footer_logo">
-                    <img class="logo_img" src="../static/images/logo.png" alt="">
+                    <img class="logo_img" src="{% static 'images/logo.png' %}" alt="">
                     <a href="/">MedMeetup</a>
                 </div>
 				
@@ -147,5 +142,10 @@
 			</div>
 
 		</footer>
+
+
+        <!-- ============================= Link JS File ========================= -->
+        <script src="{% static 'js/carousel.js' %}" defer></script>
+        <script src="{% static 'js/home.js' %}" defer></script>
     </body>
 </html>

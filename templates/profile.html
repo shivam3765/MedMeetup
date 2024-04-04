@@ -4,24 +4,37 @@
 {% block title %} profile {% endblock title %}
 {% block body %}
 
+<!-- ==================================== user details section ================================ -->
 <section>
     <div class="profile_container">
         <div class="profile_image">
-            <img src="{% static 'files/profile.jpg'%}">
-            <form>
+<!-- =============================== profile upload ================================================ -->
+            {% if request.user.userprofile.profile_image %}
+                <img src="{{ request.user.userprofile.profile_image.url }}" alt="Profile Image">
+            {% else %}
+                <img src="{% static 'files/profile.jpg' %}" alt="Default Profile Image">
+            {% endif %}
+
+            <!-- ========================== upload profile Form ===================================== -->
+            <form method="post" enctype="multipart/form-data" action="{% url 'upload_profile_image' %}">
+                {% csrf_token %}
                 <input type="file" name="profile">
-                <input type="submit">
+                <input type="submit" value="Upload">
             </form>
+            <!-- ======================================== Form end ================================== -->
+
         </div>
         <div class="profile_details">
             <h1>{{user.first_name}} {{user.last_name}}</h1>
             <h3>Email : {{user.email}}</h3>
             <h3>UserName : {{user.username}}</h3>
-            <button id="toggleButton">Appoint</button>
+            <button id="toggleButton">Check Appointment</button>
         </div>
     </div>
 </section>
+<!-- ======================================= End user details section =================================== -->
 
+<!-- ================================ Appointment details section ====================================== -->
 <section>
     <div class="table_container">
         <table>
@@ -55,5 +68,6 @@
         </table>
     </div>
 </section>
+<!-- ============================== End appointment details section ======================== -->
 
 {% endblock body %}

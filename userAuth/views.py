@@ -3,6 +3,8 @@ from django.contrib.auth.models import User
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 
+
+# ==================== This function use for SignUp  ==================
 def signup(request):
     if request.method == "POST":
         first_name = request.POST.get("first_name")
@@ -33,6 +35,7 @@ def signup(request):
     return render(request, "registration.html")
 
 
+# ======================= This function for SignIn =================================
 def signin(request):
     if request.method == 'POST':
         username = request.POST.get('username')
@@ -56,6 +59,8 @@ def signin(request):
 
     return render(request, 'login.html')
 
+
+# ========================= This function for SignOut =====================
 def signout(request):
     logout(request=request)
 

@@ -21,7 +21,7 @@
     color: #FFD0EC;
 }
 
-.about_content h1, p{
+.about_content h1 p{
     margin-top: 1rem;
     text-align: center;
     font-size: 2rem;
