@@ -29,11 +29,11 @@ def contact(request):
         email = request.POST.get("email")
         message = request.POST.get("message")
         
-        subject = f"{name} quert from your hospital website"
+        subject = "User query from hospital"
         send_mail(subject=subject,
-                message=message,
-                recipient_list=[settings.EMAIL_HOST_USER],
-                from_email= email,
+                message=f"{message} \n\n User name is : {name} \n  User email address is : {email}",
+                from_email= settings.EMAIL_HOST_USER,
+                recipient_list=settings.EMAIL_HOST_RESIVER,
                 fail_silently=False
                 )
         
