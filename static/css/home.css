@@ -1,306 +1,91 @@
-/* ====================== Hero section ========================= */
-.home_section{
-    width: 100vw;
-    height: 100vh;
-    background-image: url("../images/hero_bg.jpg");
+
+/* ? Hero Section ? */
+.hero{
+    background-image: url("./../images/hero_bg.jpg");
     background-size: cover;
-    background-position: center;
     background-repeat: no-repeat;
+    background-position: right center;
+    min-height: 90dvh;
+    border: none ;
 }
 
-.main_container{
-    width: 100%;
-    display: flex;
-    color: #496989;
+.hero > .container{
+    max-width: 37.5rem;
 }
 
-.left_container{
-    width: 50%;
-    font-size: 2.5rem;
-    padding: 8rem;
-    display: flex;
-    flex-direction: column;
-    gap: 2.5rem;
+.hero__text{
+    font-size: var(--fs-l);
+    font-weight: 400;
 }
 
-.hero_button {
-    width: max-content;
-    padding: 1rem;
-    border: .2rem;
-    background-color: #0B60B0;
-    border: none;
-    font-size: 2rem;
+/*? department & doctor Section */
+
+.department__cards,
+.doctors__cards{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(18.75rem, 1fr));
+    column-gap: var(--gap-l);
+    row-gap: var(--gap-xl);
 }
 
-.right_container{
-    display: flex;
-    justify-content: center;
-}
-
-
-/* ========================== Department section =========================== */
-.department_section{
-    width: 100vw;
-    padding: 2rem;
+.department__card,
+.doctors__card{
     display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: 2rem;
-    background-image: linear-gradient(to bottom, #000519, #01445e);
-    color: #496989;
+    gap: var(--gap-r);
+
+    background-color: var(--bg-grey);
+    padding: var(--gap-r);
 }
 
-.department_header{
-    padding-top: 5rem;
-    font-size: 2rem;
+.card__img{
+    height: 18.75rem;
+}
+
+/*?-----Testimonials-----?*/
+
+.testimonial__cards{
     display: flex;
     flex-direction: column;
-    gap: .5rem;
-    align-items: center;
+    gap: var(--space-xl);
 }
 
-.department_silider{
-    width: 100%;
-    display: flex;
-    gap: 2rem;
+.testimonial__card{
+display: flex;
+flex-direction: column;
+background-color: var(--bg-blue);
+position: relative;
+max-width: 37.5rem;
+color: var(--fc-white-warm);
+margin: 0 auto;
 }
-
-.department_card{
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    width: 30rem;
-    background-color: #496989;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
-    cursor: pointer;
-}
-
-.department_card:hover {
-    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
-}
-
-.department_image{
-    width: 100%;
-    height: 25rem;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
-.department_details{
-    display: flex;
-    flex-direction: column;
-    padding: 2rem;
-    font-size: 1.4rem;
-    color: #00224D;
-}
-
-.department_description{
-    padding-top: 1rem;
-}
-
-.department_button{
-    margin-top: 1rem;
-    width: 5.3rem;
-    font-size: 1.7rem;
-    background-color: #01445e;
-    border: none;
-    transition: all .3s ease-in-out;
-    color: #FFD0EC;
-    border-radius: .2rem;
-    padding: .4rem;
-    cursor: pointer;
-    text-align: center;
-}
-
-.department_button:hover{
-    background-color: #81689D;
-    color: #01445e;
-    cursor: pointer;
-}
-
-/* ================================== Doctors section ===================================== */
-.doctors_section{
-    width: 100vw;
-    padding: 2rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 2rem;
-    background-image: linear-gradient(to bottom, #000519, #01445e);
-    color: #496989;
-}
-
-.doctors_header{
-    padding-top: 5rem;
-    font-size: 2rem;
-    display: flex;
-    flex-direction: column;
-    gap: .5rem;
-    align-items: center;
-}
-
-.doctors_silider{
-    width: 100%;
-    display: flex;
-    gap: 2rem;
-}
-
-.doctors_card{
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    width: 30rem;
-    background-color: #496989;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
-    cursor: pointer;
-}
-
-.doctors_card:hover {
-    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
-}
-
-.doctors_image{
-    width: 100%;
-    height: 25rem;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
-.doctors_details{
-    display: flex;
-    flex-direction: column;
-    padding: 2rem;
-    font-size: 1.4rem;
-    color: #00224D;
-}
-
-.doctors_description{
-    padding-top: 1rem;
-}
-
-.doctors_button{
-    margin-top: 1rem;
-    width: 5.3rem;
-    font-size: 1.7rem;
-    background-color: #01445e;
-    border: none;
-    transition: all .3s ease-in-out;
-    color: #FFD0EC;
-    border-radius: .2rem;
-    padding: .4rem;
-    cursor: pointer;
-    text-align: center;
-}
-
-.doctors_button:hover{
-    background-color: #FFD0EC;
-    color: #01445e;
-    cursor: pointer;
-}
-
-/* ================================== Testimonial section ==================================== */
-.testimonial_section{
-    width: 100vw;
-    padding: 2rem;
-    background-image: linear-gradient(to bottom, #000519, #01445e);
-    color: #496989;
-}
-
-.testimonial_details{
-    padding: 2rem;
-    font-size: 1.4rem;
-}
-
-.image {
-    border-radius: 5rem;
-    width: 10rem;
-    height: 10rem;
-    position: relative;
+.testimonial__img_container{
+    width: 9.37rem;
+    height: 9.37rem;
+    border-radius: 50%;
     overflow: hidden;
-    margin-top: 2rem;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.30), 0 6px 20px 0 rgba(0, 0, 0, 0.30);
-}
-
-.user_image{
-    width: 10rem;
-    height: 10rem;
+    background-color: var(--bg-blue);
     position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-}
-
-.testimonial_name, 
-.testimonial_rating {
-    text-align: center;
-    margin-top: 2rem;    
-}
-
-    
-.wrapper {
-    width: 90%;
-    padding: 2rem;
-    position: relative;
+    top: -25%;
     left: 50%;
+    padding: .153em;
     transform: translateX(-50%);
 }
-
-.header {
-    text-align: center;
-    margin-bottom: 1rem;
+.testimonial__img{
+    width: 9rem;
+    height: 9rem;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
 }
 
-.header p{
-    font-size: 2.5rem;
+.testimonial__review{
+    padding: 5rem var(--gap-l) 0;
 }
-
-.wrapper .carousel { 
-    display: grid; 
-    grid-auto-flow: column; 
-    grid-auto-columns: calc((100% / 4));
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    scroll-behavior: smooth; 
-    scrollbar-width: 0;
-}
-
-.carousel::-webkit-scrollbar { 
-    display: none; 
-} 
-
-.carousel :where(.card, .img) { 
-    display: flex; 
-    align-items: center; 
-    justify-content: center; 
-} 
-
-.carousel .card { 
-    scroll-snap-align: start; 
-    list-style: none; 
-    background: #FFD0EC;
-    display: flex; 
-    cursor: pointer; 
-    width: 30rem;
-    padding-bottom: 15px; 
-    align-items: center; 
-    justify-content: center; 
-    flex-direction: column; 
-} 
-
-  
-.card .img { 
-    width: 15rem; 
-    height: 15rem; 
-    border-radius: 50%; 
-
-} 
-
-.card .img img { 
-    width: 20rem;
-    height: 20rem; 
-    object-fit: cover; 
-    border-radius: 50%; 
+.ratings{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .4em;
+    margin-bottom: var(--gap-s);
 }

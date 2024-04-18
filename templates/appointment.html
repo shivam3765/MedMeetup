@@ -4,61 +4,64 @@
 
 {% block body %}
 <!-- ============================= Body Start ========================= -->
-<section class="section">
+<section class="form__container">
 
 <div class="container">
+
+    <h1 class="mb-s">Appointment</h1>
+
+    <!-- ---------------- alert message ----------------- -->
+    {% if messages %}
+        <div class="messages">
+            {% for message in messages %}
+            {% if message.tags %}
+                <div class="
+                    {% if 'info' in message.tags %}
+                        message__error
+                    {% elif 'success' in message.tags %}
+                        message__success
+                    {% else %}
+                        message__info
+                    {% endif %} message__alert
+                " >
+                    <p class="message__text">{{ message }}</p>
+                </div>
+            {% endif %}
+            {% endfor %}
+        </div>
+    {% endif %}
 
     <!-- ============================= Form Start ========================= -->
     <form method="post" class="form">
         {% csrf_token %}
-        <h1>Appointment</h1>
-
-        <!-- ---------------- alert message ----------------- -->
-        {% if messages %}
-      <div class="messages" style="width: 100%;">
-          {% for message in messages %}
-          {% if message.tags %}
-              {% if 'info' in message.tags %}
-                  <div class="info" style="background-color: #ffa43cc4; padding: .5rem;">
-              {% elif 'success' in message.tags %}
-                  <div class="success" style="background-color: #008000cc; padding: .5rem">
-              {% else %}
-                  <div class="other" style="background-color: #ccc; padding: .5rem;">
-              {% endif %}
-                  <p style="text-align: center; color: #fff;">{{ message }}</p>
-              </div>
-          {% endif %}
-          {% endfor %}
-      </div>
-        {% endif %}
 
             <!-- ----------------- Form items ----------------- -->
-            <div class="form_items">
+            <div class="form__input_box">
                 <label>Patient Name</label>
                 <input type="text" name="patient_name" placeholder="Enter patient name" required>
             </div>
 
-            <div class="form_items">
+            <div class="form__input_box">
                 <label>Patient Age</label>
                 <input type="text" name="patient_age" placeholder="Enter age">
             </div>
 
-            <div class="form_items">
+            <div class="form__input_box">
                 <label>Email</label>
                 <input type="email" name="patient_email" placeholder="Enter email" required>
             </div>
 
-            <div class="form_items">
+            <div class="form__input_box">
                 <label>Mobile Number</label>
                 <input type="text" name="patient_mobile" placeholder="Enter mobile number" required>
             </div>
 
-            <div class="form_items">
+            <div class="form__input_box">
                 <label>Date</label>
                 <input type="date" name="date" required>
             </div>
 
-            <div class="form_items">
+            <div class="form__input_box">
                 <label>Doctor</label>
                 <select name="doctor" required>
                     <option>--Select-Doctors--</option>
@@ -68,7 +71,7 @@
                 </select>
             </div>
 
-            <div class="form_items">
+            <div class="form__input_box">
                 <label>Department</label>
                 <select name="department">
                     <option>--Select-Department--</option>
@@ -78,8 +81,8 @@
                 </select>
             </div>
 
-            <div class="form_items">
-                <input type="submit" value="Submit">
+            <div class="form__input_box">
+                <input class="btn btn-green" type="submit" value="Submit">
             </div>
 
     </form>

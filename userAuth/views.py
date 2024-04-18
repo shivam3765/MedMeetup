@@ -13,26 +13,37 @@ def signup(request):
         username = request.POST.get("username")
         password = request.POST.get("password")
 
-        user = User.objects.filter(username = username)
+        # Check for empty fields
+        if not all([first_name, last_name, email, username, password]):
+            messages.info(request, "All fields are required.")
+            return redirect("/auth/signup")
 
-        if user.exists():
+        # Validate username format
+        import re
+        if not re.match(r'^[a-zA-Z0-9_]+$', username):
+            messages.info(request, "Username can only contain letters (a-z or A-Z), numbers (0-9), and underscores (_).")
+            return redirect("/auth/signup")
+
+        # Check if username already exists
+        if User.objects.filter(username=username).exists():
             messages.info(request, "Username already exists.")
             return redirect("/auth/signup")
-        
-        user = User.objects.create(
-            first_name = first_name,
-            last_name = last_name,
-            email = email,
-            username = username
-        )
 
+        # Create user
+        user = User.objects.create(
+            first_name=first_name,
+            last_name=last_name,
+            email=email,
+            username=username
+        )
         user.set_password(password)
         user.save()
 
-        messages.success(request, "Account Successfully created.")
+        messages.success(request, "Account successfully created.")
         return redirect('/auth/signup')
 
     return render(request, "registration.html")
+
 
 
 # ======================= This function for SignIn =================================

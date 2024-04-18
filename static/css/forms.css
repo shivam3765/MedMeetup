@@ -1,112 +1,76 @@
-.section{
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    background-image: url(../images/form-bg.jpg);
-  }
-  
-  .container{
-    width: 40%;
-    padding: 2rem;
-    font-size: 17px;
-    height: max-content;
+.form__container{
+    background-image: url("./../images/form-bg.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center ;
+    min-height: 90dvh;
+
+    
+    .container{
+        background-color: var(--bg-grey);
+        min-width: 400px;
+        width: fit-content;
+
+        padding: var(--gap-s);
+        position: relative;
+    }
+
+    .btn{
+        border: none;
+    }
+
+}
+
+
+/*? To show message according form submission */
+.message__error{
+    background-color: #ffa43cc4; 
+    padding: .5rem;
+}
+
+.message__success{
+    background-color: #008000cc; 
+    padding: .5rem;
+}
+
+.message__info{
+    background-color: #ccc; 
+    padding: .5rem;
+}
+
+.message__text{
+    text-align: center; 
+    color: #fff;
+}
+
+.message__alert{
+    position: absolute;
+    bottom: calc(100% - var(--heading-secondary) * 2.6);
+    right: var(--gap-s);
+    left: var(--gap-s);
+}
+
+.form{
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    align-items: center;
-    color: #FFD0EC;
-  }
-  
-  h1{
-    font-size: 40px;
-  }
-  
-  .form {
-    width: 100%;
+    gap: var(--gap-r);
+    font-size: var(--fs-l);
+}
+.form__input_box{
     display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: 2rem;
-    font-size: 20px;
-    background-color: #81689D;
-    padding: 0 2rem;
-    padding: 2rem;
-  }
+    gap: var(--gap-xs);
 
-  .form_items {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: .5rem;
-    font-size: 2.5rem
-  }
+    input{
+        border: none;
+        font-size: var(--fs-r);
+        padding: .1em .3em;
+        font-family: var(--ff-montserrat);
 
-  .form_items:last-child {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .form_items select {
-    width: 100%;
-    padding: 7px;
-    border-radius: 5px;
-    border: none;
-    font-size: 1.6rem;
-    outline: none;
-    color: #496989;
-  }
-
-  .form_items textarea{
-    resize: none;
-    outline : none;
-    color: #496989;
-    font-size: 2rem;
-  }
-
-  input[type = "text"],
-  input[type = "password"],
-  input[type= "email"],
-  input[type= "date"] {
-    width: 100%;
-    padding: 7px;
-    border-radius: 5px;
-    border: none;
-    font-size: 1.8rem;
-    outline: none;
-    color: #496989;
-  } 
-  
-  input[type = "submit"]{
-    width: 20rem;
-    padding: 6px;
-    border-radius: 2px;
-    margin-top: 17px;
-    border: none;
-    font-size: 2rem;
-    background-color: rgb(13, 87, 161);
-    color: #FFD0EC;
-  }
-  
-  input[type="submit"]:hover {
-    background-color: #0056b3;
-  }
-  
-  .link,
-  .link:link,
-  .link:visited,
-  .link:active {
-    color: #FFA33C;
-    text-decoration: none;
-  }
-
-
-  /* ===================================== Message CSS ================================== */
-  .messages .info{
-    background-color: #FFA33C;
-  }
-
-  .messages .success{
-    background-color: #14a44ecd;
-  }
+        &:focus{
+            /* background-color: var(--fc-white-warm); */
+            background-color: #E2E7F2;
+            outline: none;
+        }
+    }
+}

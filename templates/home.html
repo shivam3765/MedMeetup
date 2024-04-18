@@ -4,86 +4,94 @@
 
 {% block body %}
 <!-- ============================= Body Start ========================= -->
-<section style="min-height: 100vh" class="home_section">
-    <div class="main_container">
-
-        <div class="left_container">
-            <h4>International Hospital</h4>
-            <h1>Empowering Health Everywhere, Everytime!</h1>
-            <p>At MedMeetup, We prioritize timely healthcare access through convenient appointment scheduling accross all departments. 
+<section class="hero">
+    <div class="container">
+        <header class="mb-mid">
+            <p class="sub__heading">International Hospital</h4>
+            <h1 class="">Empowering Health Everywhere, Everytime!</h1>
+        </header>
+            <p class="hero__text mb-s">At MedMeetup, We prioritize timely healthcare access through convenient appointment scheduling accross all departments. 
                 As a premier hospital-based platform, we bridge the gap between patients and doctors. 
                 Our mission is to ensure efficient healthcare services for all.
             </p>
-            <a href="/appointment/appoint/" type="button" class="hero_button">Appointment</a>
+            <a href="/appointment/appoint/" type="button" class="btn btn-green">Appointment</a>
         </div>
-        <div class="right_container">
-            <img class="hero_img">
-        </div>
-    </div>
 </section>
 
-<section class="department_section">
-    <div class="department_header">
-        <p>Best Practice care!</p>
-        <h1>Responsible Departments</h1>
-    </div>
-    <div class="department_silider">
-        {% for department in department|slice:"0:5" %}
-        <div class="department_card">
-            <img src="/media/{{department.department_image}}" class="department_image">
-            <div class="department_details">
-                <h3 class="department_name">{{ department.department_name }}</h3>
-                <p class="department_description">{{ department.department_description|slice:"0:100"}} .....</p>
-                <a href="/doctors/department/{{department.id}}" class="department_button">More</a>
-            </div>
-        </div>
-        {% endfor %}
-    </div>
-</section>
+<section class="department">
+    <div class="container">
+        <header class="text-center">
+            <p class="sub__heading">Best Practice care!</p>
+            <h2 class="mb-mid">Responsible Departments</h1>
+        </header>
 
-<section class="doctors_section">
-    <div class="doctors_header">
-        <p>Best Doctors!</p>
-        <h1>Profectional Doctors</h1>
-    </div>
-    <div class="doctors_silider">
-        {% for doctor in doctors|slice:"0:5" %}
-
-        <div class="doctors_card">
-            <img src="/media/{{doctor.doctor_image}}" class="doctors_image">
-            <div class="doctors_details">
-                <h3 class="doctors_name">{{ doctor.doctor_name }}</h3>
-                <p class="doctors_description">{{ doctor.doctor_occupation }}</p>
-                <a href="/doctors/doctor/{{doctor.id}}" class="doctors_button">More</a>
-            </div>
-        </div>
-        {% endfor %}
-    </div>
-</section>
-
-<section class="testimonial_section">
-    <div class="wrapper">
-        <div class="header">
-            <p>Testimonial</p>
-            <h1>Satisfied Patients Reviews</h1>
-        </div>
-        <div class="carousel">
-            {% for review in data.user_review|slice:"0:5" %}
-            <div class="card">
-                <div class="image"> 
-                    <img src="{{review.user_image}}" class="user_image">
-                </div>
-                <div class="testimonial_details" >
-                    <p class="testimonial_review">{{ review.review|slice:"0:100"}} ....</p>
-                    <p class="testimonial_rating">
-                        {% for rating in review.rating %}
-                          {{rating}} <i class="fa-solid fa-star"></i>
-                        {% endfor %}
-                    </p>
-                    <h3 class="testimonial_name">{{ review.user_name }}</h3>
+        <div class="department__cards">
+            {% for department in department|slice:"0:5" %}
+            <div class="department__card flow-content">
+                <img src="/media/{{department.department_image}}" class="card__img">
+                <div class="card__content flow-content">
+                    <h3 class="department_name">{{ department.department_name }}</h3>
+                    <p class="department_description">{{ department.department_description|slice:"0:100"}} .....</p>
+                    <a href="/doctors/department/{{department.id}}" class="btn btn-blue" >More</a>
                 </div>
             </div>
             {% endfor %}
+        </div>
+    </div>
+</section>
+
+<section class="doctors">
+    <div class="container">
+        <header class="doctors__header text-center">
+            <p class="sub__heading">Best Doctors!</p>
+            <h2 class="mb-mid">Profectional Doctors</h2>
+        </header>
+        <div class="doctors__cards">
+            {% for doctor in doctors|slice:"0:5" %}
+            <div class="doctors__card flow-content ">
+                <img src="/media/{{doctor.doctor_image}}" class="card__img">
+                <div class="card__content flow-content">
+                    <div class="">
+                        <h3 class="doctors_name">{{ doctor.doctor_name }}</h3>
+                        <p class="doctors_description">{{ doctor.doctor_occupation }}</p>
+                    </div>
+                    <a href="/doctors/doctor/{{doctor.id}}" class="btn btn-blue">More</a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<section class="testimonial hidden">
+    <div class="container">
+            <header class="text-center">
+                <p class="sub__heading">Testimonial</p>
+                <h2 class="mb-big">Satisfied Patients Reviews</h2>
+            </header>
+
+            <div class="testimonial__cards">
+                {% for review in data.user_review|slice:"0:5" %}
+                <div class="testimonial__card testimonial__card--{{forloop.counter}}">
+                    <div class="testimonial__img_container">
+                        <img src="{{review.user_image}}" class="testimonial__img">
+                    </div>
+
+                    <div class="testimonial__content" >
+                        <p class="testimonial__review text-center mb-s">{{ review.review}}</p>
+                        <p class="testimonial__rating">
+                            {% for rating in review.rating %}
+                            <p class="ratings">
+                                <span class="rating hidden">{{rating}}</span>
+                                <span class="show__rating"></span>
+                            </p>
+                            {% endfor %}
+                            <!-- <ion-icon class="icon" name="star"></ion-icon> -->
+                        <h3 class="testimonial__name text-center mb-s">{{ review.user_name }}</h3>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
         </div>
     </div>
 </section>
